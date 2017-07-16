@@ -3,6 +3,12 @@ package de.wenzlaff.umgebung;
 import org.restlet.Component;
 import org.restlet.data.Protocol;
 
+/**
+ * Ein Beispiel Standalone Server.
+ * 
+ * @author Thomas Wenzlaff
+ *
+ */
 public class StandaloneServer {
 
 	public static final Integer PORT = 6969;

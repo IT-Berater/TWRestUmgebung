@@ -3,6 +3,12 @@ package de.wenzlaff.umgebung.resource;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * Das Daten Model für die Mindmap.
+ * 
+ * @author Thomas Wenzlaff
+ *
+ */
 public class MindmapModell implements Serializable {
 
 	private static final long serialVersionUID = 1L;

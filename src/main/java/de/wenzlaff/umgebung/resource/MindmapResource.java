@@ -5,6 +5,12 @@ import java.util.Date;
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 
+/**
+ * Die Mindmap Resource.
+ * 
+ * @author Thomas Wenzlaff
+ *
+ */
 public class MindmapResource extends ServerResource implements Mindmap {
 
 	@Override

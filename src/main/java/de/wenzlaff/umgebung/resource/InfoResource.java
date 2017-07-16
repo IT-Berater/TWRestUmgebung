@@ -4,9 +4,11 @@ import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 
 /**
+ * Die Info Resource. Aufruf unter:
+ * 
  * http://localhost:9696/umgebung/
  * 
- * @author thomaswenzlaff
+ * @author Thomas Wenzlaff
  *
  */
 public class InfoResource extends ServerResource {

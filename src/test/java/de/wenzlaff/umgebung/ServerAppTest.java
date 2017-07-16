@@ -12,6 +12,12 @@ import de.wenzlaff.umgebung.resource.MindmapModell;
 import de.wenzlaff.umgebung.resource.Umgebung;
 import de.wenzlaff.umgebung.resource.Version;
 
+/**
+ * Testklasse für den Server.
+ * 
+ * @author Thomas Wenzlaff
+ *
+ */
 public class ServerAppTest {
 
 	@BeforeClass

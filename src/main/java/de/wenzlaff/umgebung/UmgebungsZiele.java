@@ -10,6 +10,7 @@ import de.wenzlaff.umgebung.resource.UmgebungResource;
 import de.wenzlaff.umgebung.resource.VersionResource;
 
 /**
+ * Bearbeitet alle Aufrufe für den Server.
  * 
  * @author Thomas Wenzlaff
  *
