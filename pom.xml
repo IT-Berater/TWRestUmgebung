@@ -6,8 +6,23 @@
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>RestUmgebung</name>
-	<url>http://www.wenzlaff.info</url>
+	<url>http://www.wenzlaff.info</url>	
+	<description>Testprogramm für REST Service - Client und Server mit Restfull</description>
 
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	
+	<scm>
+		<connection>scm:git:git@github.com:IT-Berater/TWRestUmgebung.git</connection>
+		<developerConnection>scm:git:git@github.com:IT-Berater/TWRestUmgebung.git</developerConnection>
+		<url>https://github.com/IT-Berater/TWRestUmgebung</url>
+	</scm>
+	
 	<repositories>
 		<repository>
 			<id>maven-restlet</id>
