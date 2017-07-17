@@ -35,7 +35,8 @@
 		</plugins>
 	</build>
 	<dependencies>
-		<dependency>
+		<!-- Java Standalone -->
+		<dependency>		
 			<groupId>org.restlet.jse</groupId>
 			<artifactId>org.restlet</artifactId>
 			<version>${restlet-version}</version>
@@ -45,11 +46,13 @@
 			<artifactId>org.restlet.ext.simple</artifactId>
 			<version>${restlet-version}</version>
 		</dependency>
+		<!-- Java Jackson unterstüzung um Objekte zu serialisieren -->
 		<dependency>
 			<groupId>org.restlet.jee</groupId>
 			<artifactId>org.restlet.ext.jackson</artifactId>
 			<version>${restlet-version}</version>
 		</dependency>
+		<!-- Testframework JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
