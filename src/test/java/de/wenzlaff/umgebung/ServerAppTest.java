@@ -1,11 +1,11 @@
 package de.wenzlaff.umgebung;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.restlet.resource.ClientResource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import de.wenzlaff.umgebung.resource.Mindmap;
 import de.wenzlaff.umgebung.resource.MindmapModell;
@@ -20,7 +20,7 @@ import de.wenzlaff.umgebung.resource.Version;
  */
 public class ServerAppTest {
 
-	@BeforeClass
+	@BeforeAll
 	public static void startServer() throws Exception {
 		StandaloneServer.start();
 	}

@@ -31,11 +31,19 @@
 		</repository>
 	</repositories>
 	<properties>
+	    <java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<restlet-version>2.3.10</restlet-version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		
+		<junit.version>4.12</junit.version>
+		<junit.jupiter.version>5.0.0-M6</junit.jupiter.version>
+		<junit.vintage.version>${junit.version}.0-M6</junit.vintage.version>
+		<junit.platform.version>1.0.0-M6</junit.platform.version>
+
 	</properties>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -43,8 +51,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -67,12 +75,33 @@
 			<artifactId>org.restlet.ext.jackson</artifactId>
 			<version>${restlet-version}</version>
 		</dependency>
-		<!-- Testframework JUnit -->
+		
+		<!-- Testframework JUnit 5 -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
 			<scope>test</scope>
+		</dependency>		
+		
+		<!-- Only required to run tests in an IDE that bundles an older version -->
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>${junit.platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Only required to run tests in an IDE that bundles an older version -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+		</dependency>
+		<!-- Only required to run tests in an IDE that bundles an older version -->
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<version>${junit.vintage.version}</version>
 		</dependency>
 	</dependencies>
 </project>
