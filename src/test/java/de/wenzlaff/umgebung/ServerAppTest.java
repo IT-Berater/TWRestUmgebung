@@ -1,7 +1,10 @@
 package de.wenzlaff.umgebung;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 import org.restlet.resource.ClientResource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,6 +21,8 @@ import de.wenzlaff.umgebung.resource.Version;
  * @author Thomas Wenzlaff
  *
  */
+@DisplayName("REST Server Testklasse")
+@RunWith(JUnitPlatform.class)
 public class ServerAppTest {
 
 	@BeforeAll
@@ -25,6 +30,7 @@ public class ServerAppTest {
 		StandaloneServer.start();
 	}
 
+	@DisplayName("Versions Test")
 	@Test
 	public void testGetUmgebungVersion() throws Exception {
 
