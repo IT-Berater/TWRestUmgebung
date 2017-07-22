@@ -2,7 +2,12 @@ package de.wenzlaff.umgebung;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 import org.restlet.resource.ClientResource;
@@ -93,6 +98,47 @@ public class ServerAppTest {
 		System.out.println("Erstellungs Datum: " + m.getErstellungsDatum());
 		System.out.println(m);
 
+	}
+
+	@DisplayName("Mehrfach Anfragen Service wenzlaff.de")
+	@RepeatedTest(value = 5, name = "Wiederholungs Lauf {currentRepetition} von {totalRepetitions}")
+	public void wiederholungenTesten(TestInfo testInfo, RepetitionInfo repetitionInfo) {
+		String hostUrl = StandaloneServer.HOST + "/umgebung/service";
+		System.out.println("Anfrage von: " + hostUrl);
+
+		ClientResource clientResource = new ClientResource(hostUrl);
+
+		Umgebung resource = clientResource.wrap(Umgebung.class);
+
+		String vers = resource.getUmgebung();
+
+		assertTrue(vers.length() > 10);
+
+		System.out.println("Display Klasse: " + testInfo.getTestClass()); // Display Klasse: Optional[class
+																			// de.wenzlaff.umgebung.ServerAppTest]
+		System.out.println("Display Name: " + testInfo.getDisplayName()); // Display Name: Wiederholungs Lauf 1 von 1
+		System.out.println("Display Methode: " + testInfo.getTestMethod()); // Display Methode: Optional[public void
+																			// de.wenzlaff.umgebung.ServerAppTest.wiederholungenTesten(org.junit.jupiter.api.TestInfo)]
+		System.out.println("Wiederholungen: " + repetitionInfo.getCurrentRepetition() + " von "
+				+ repetitionInfo.getTotalRepetitions());
+	}
+
+	/**
+	 * Braucht: <dependency> <groupId>org.junit.jupiter</groupId>
+	 * <artifactId>junit-jupiter-params</artifactId>
+	 * <version>${junit.jupiter.version}</version> <scope>test</scope> </dependency>
+	 */
+	@DisplayName("Parameter Test mit unterschiedlichen URLs wenzlaff.de")
+	@ParameterizedTest
+	@ValueSource(strings = { "/umgebung/service", "/umgebung/mindmap", "/umgebung/version" })
+	public void parameterTesten(String hostServiceUrl) {
+
+		String hostUrl = StandaloneServer.HOST + hostServiceUrl;
+		ClientResource clientResource = new ClientResource(hostUrl);
+		Umgebung resource = clientResource.wrap(Umgebung.class);
+
+		String vers = resource.getUmgebung();
+		assertTrue(vers.length() > 4);
 	}
 
 }
