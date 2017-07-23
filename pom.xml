@@ -6,7 +6,7 @@
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>RestUmgebung</name>
-	<url>http://www.wenzlaff.info</url>	
+	<url>http://www.wenzlaff.info</url>
 	<description>Testprogramm für REST Service - Client und Server mit Restfull</description>
 
 	<licenses>
@@ -16,13 +16,13 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	
+
 	<scm>
 		<connection>scm:git:git@github.com:IT-Berater/TWRestUmgebung.git</connection>
 		<developerConnection>scm:git:git@github.com:IT-Berater/TWRestUmgebung.git</developerConnection>
 		<url>https://github.com/IT-Berater/TWRestUmgebung</url>
 	</scm>
-	
+
 	<repositories>
 		<repository>
 			<id>maven-restlet</id>
@@ -31,19 +31,19 @@
 		</repository>
 	</repositories>
 	<properties>
-	    <java.version>1.8</java.version>
+		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<restlet-version>2.3.10</restlet-version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		
+
 		<junit.version>4.12</junit.version>
 		<junit.jupiter.version>5.0.0-M6</junit.jupiter.version>
 		<junit.vintage.version>${junit.version}.0-M6</junit.vintage.version>
 		<junit.platform.version>1.0.0-M6</junit.platform.version>
 
 	</properties>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -55,11 +55,31 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/alternateLocation</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
 		<!-- Java Standalone -->
-		<dependency>		
+		<dependency>
 			<groupId>org.restlet.jse</groupId>
 			<artifactId>org.restlet</artifactId>
 			<version>${restlet-version}</version>
@@ -75,40 +95,40 @@
 			<artifactId>org.restlet.ext.jackson</artifactId>
 			<version>${restlet-version}</version>
 		</dependency>
-		
+
 		<!-- Testframework JUnit 5 -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>${junit.jupiter.version}</version>
 			<scope>test</scope>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-params</artifactId>
 			<version>${junit.jupiter.version}</version>
 			<scope>test</scope>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
-		</dependency>		
-		<dependency>
-		    <groupId>org.junit.platform</groupId>
-		    <artifactId>junit-platform-runner</artifactId>
-		    <version>${junit.platform.version}</version>
-		    <scope>test</scope>
 		</dependency>
-						
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>${junit.platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- Only required to run tests in an IDE that bundles an older version -->
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-launcher</artifactId>
 			<version>${junit.platform.version}</version>
 			<scope>test</scope>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
