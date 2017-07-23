@@ -129,7 +129,7 @@ public class ServerAppTest {
 	 * <version>${junit.jupiter.version}</version> <scope>test</scope> </dependency>
 	 */
 	@DisplayName("Parameter Test mit unterschiedlichen URLs wenzlaff.de")
-	@ParameterizedTest
+	@ParameterizedTest(name = "Testfall Nr. {index} mit URL Argument [{arguments}]")
 	@ValueSource(strings = { "/umgebung/service", "/umgebung/mindmap", "/umgebung/version" })
 	public void parameterTesten(String hostServiceUrl) {
 
