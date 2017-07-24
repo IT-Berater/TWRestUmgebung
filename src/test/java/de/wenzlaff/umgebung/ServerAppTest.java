@@ -7,12 +7,14 @@ import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 import org.restlet.resource.ClientResource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import de.wenzlaff.umgebung.resource.Mindmap;
@@ -141,4 +143,12 @@ public class ServerAppTest {
 		assertTrue(vers.length() > 4);
 	}
 
+	@DisplayName("CSV Flugdaten validierung")
+	@ParameterizedTest(name = "Test Nr. {index} mit Summe: {1} und UID: {0} ")
+	@CsvFileSource(resources = "/flug-data.csv")
+	void flugDatenDateiTest(String uid, int summe) {
+
+		assertNotNull(uid, "Da fehlt eine UID");
+		assertTrue(summe > 2000, "Das sind zu wenig Flugzeuge!");
+	}
 }
