@@ -8,8 +8,7 @@ import org.restlet.resource.ServerResource;
  * 
  * http://localhost:9696/umgebung/
  * 
- * @author Thomas Wenzlaff
- *
+ * @author Thomas Wenzlaff 
  */
 public class InfoResource extends ServerResource {
 
