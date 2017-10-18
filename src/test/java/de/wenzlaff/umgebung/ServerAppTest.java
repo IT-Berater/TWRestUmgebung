@@ -9,8 +9,6 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import org.restlet.resource.ClientResource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -29,7 +27,6 @@ import de.wenzlaff.umgebung.resource.Version;
  *
  */
 @DisplayName("REST Server Testklasse")
-@RunWith(JUnitPlatform.class)
 public class ServerAppTest {
 
 	@BeforeAll
