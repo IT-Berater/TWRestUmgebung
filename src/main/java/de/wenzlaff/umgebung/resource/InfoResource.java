@@ -18,5 +18,4 @@ public class InfoResource extends ServerResource {
 		return "Folgenden Schnittstellen sind in der Umgebung implementiert:" + "\nhttp://localhost:9696/umgebung"
 				+ "\nhttp://localhost:9696/umgebung/service" + "\nhttp://localhost:9696/umgebung/version";
 	}
-
 }
