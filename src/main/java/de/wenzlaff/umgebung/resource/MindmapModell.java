@@ -16,6 +16,7 @@ public class MindmapModell implements Serializable {
 
 	private String name;
 
+	/** Das erstellungs Datum. */
 	private Date erstellungsDatum;
 
 	public MindmapModell() {
