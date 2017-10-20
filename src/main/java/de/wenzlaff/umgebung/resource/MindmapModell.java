@@ -7,7 +7,6 @@ import java.util.Date;
  * Das Daten Model für die Mindmap.
  * 
  * @author Thomas Wenzlaff
- *
  */
 public class MindmapModell implements Serializable {
 
