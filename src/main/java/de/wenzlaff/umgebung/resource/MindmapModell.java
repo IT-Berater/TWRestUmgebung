@@ -14,6 +14,7 @@ public class MindmapModell implements Serializable {
 
 	private String version = "0.0.1";
 
+	/** Name der Mindmap. */
 	private String name;
 
 	/** Das erstellungs Datum. */
