@@ -99,6 +99,7 @@ public class ServerAppTest {
 
 	}
 
+	@Performance
 	@DisplayName("Mehrfach Anfragen Service wenzlaff.de")
 	@RepeatedTest(value = 5, name = "Wiederholungs Lauf {currentRepetition} von {totalRepetitions}")
 	public void wiederholungenTesten(TestInfo testInfo, RepetitionInfo repetitionInfo) {
@@ -127,6 +128,7 @@ public class ServerAppTest {
 	 * <artifactId>junit-jupiter-params</artifactId>
 	 * <version>${junit.jupiter.version}</version> <scope>test</scope> </dependency>
 	 */
+	@Performance
 	@DisplayName("Parameter Test mit unterschiedlichen URLs wenzlaff.de")
 	@ParameterizedTest(name = "Testfall Nr. {index} mit URL Argument [{arguments}]")
 	@ValueSource(strings = { "/umgebung/service", "/umgebung/mindmap", "/umgebung/version" })
@@ -140,6 +142,7 @@ public class ServerAppTest {
 		assertTrue(vers.length() > 4);
 	}
 
+	@Performance
 	@DisplayName("CSV Flugdaten validierung")
 	@ParameterizedTest(name = "Test Nr. {index} mit Summe: {1} und UID: {0} ")
 	@CsvFileSource(resources = "/flug-data.csv")
