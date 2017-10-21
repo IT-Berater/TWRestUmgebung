@@ -127,7 +127,6 @@ public class ServerAppTest {
 	 * <artifactId>junit-jupiter-params</artifactId>
 	 * <version>${junit.jupiter.version}</version> <scope>test</scope> </dependency>
 	 */
-	@Performance
 	@DisplayName("Parameter Test mit unterschiedlichen URLs wenzlaff.de")
 	@ParameterizedTest(name = "Testfall Nr. {index} mit URL Argument [{arguments}]")
 	@ValueSource(strings = { "/umgebung/service", "/umgebung/mindmap", "/umgebung/version" })
