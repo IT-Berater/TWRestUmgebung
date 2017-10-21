@@ -141,7 +141,6 @@ public class ServerAppTest {
 		assertTrue(vers.length() > 4);
 	}
 
-	@Performance
 	@DisplayName("CSV Flugdaten validierung")
 	@ParameterizedTest(name = "Test Nr. {index} mit Summe: {1} und UID: {0} ")
 	@CsvFileSource(resources = "/flug-data.csv")
