@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Tag;
  * 
  * Zentral ausgeschaltet.
  * 
- * @author Thomas Wenzlaff  www.kleinhirn.eu
+ * @author Thomas Wenzlaff
  */
 @Disabled
 @Target({ ElementType.TYPE, ElementType.METHOD })
