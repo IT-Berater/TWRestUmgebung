@@ -21,5 +21,4 @@ import org.junit.jupiter.api.Tag;
 @Retention(RetentionPolicy.RUNTIME)
 @Tag("Performance")
 public @interface Performance {
-	
 }
