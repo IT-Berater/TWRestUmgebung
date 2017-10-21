@@ -24,7 +24,6 @@ import de.wenzlaff.umgebung.resource.Version;
  * Testklasse für den Server.
  * 
  * @author Thomas Wenzlaff
- *
  */
 @DisplayName("REST Server Testklasse")
 public class ServerAppTest {
