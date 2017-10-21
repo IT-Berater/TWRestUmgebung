@@ -10,7 +10,9 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 
 /**
- * Annotation für Performace Tests. Zentral ausgeschaltet.
+ * Annotation für Performace Tests. 
+ * 
+ * Zentral ausgeschaltet.
  * 
  * @author Thomas Wenzlaff  www.kleinhirn.eu
  */
